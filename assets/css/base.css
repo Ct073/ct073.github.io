@@ -196,7 +196,7 @@ img{
 .hero-banner {
   position: relative;
   min-height: 320px; /* 🔹 Altura reduzida */
-  background-image: url("../img/BANNER-DESKTOP.jpg"); /* Sua imagem nova */
+  background-image: url("../img/banner-desktop.jpg"); /* Sua imagem nova */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

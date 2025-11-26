@@ -531,6 +531,81 @@ img{
   }
 }
 
+/* Versão mobile escondida no desktop */
+.schedule-mobile {
+  display: none;
+}
+
+/* Caixa de cada dia */
+.schedule-mobile-day {
+  background: #fff;
+  border-radius: 16px;
+  padding: 16px 20px;
+  border: var(--border);
+  margin-bottom: 16px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.04);
+}
+
+.schedule-mobile-day h3 {
+  text-align: center;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* Cada horário */
+.schedule-mobile-row {
+  margin-bottom: 14px;
+}
+
+.schedule-mobile-row:last-child {
+  margin-bottom: 4px;
+}
+
+/* Linha de cima: hora + TREINO */
+.row-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.time {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.type {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--brand-dark);
+  text-transform: uppercase;
+}
+
+.type-game {
+  color: var(--brand);
+}
+
+/* Linha de baixo: local */
+.place {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 2px;
+  display: block;
+}
+
+/* Ativar versão mobile */
+@media (max-width: 820px) {
+  .schedule-table {
+    display: none;
+  }
+
+  .schedule-mobile {
+    display: block;
+    margin-top: 20px;
+  }
+}
+
 /* ============================
    CTA FINAL — AULA / HORÁRIOS
 ============================ */
@@ -780,7 +855,7 @@ button:hover{
 .site-footer{
   background: #000;
   color: #fff;
-  margin-top: 0px;
+  margin-top: 32px;
 }
 
 .footer-inner{
@@ -863,9 +938,10 @@ button:hover{
     padding: 10px 16px;          /* menos altura no mobile */
   }
 
-  .header-inner{
-    flex-direction: column;      /* logo em cima, menu embaixo */
-    align-items: center;         /* tudo centralizado */
+    .header-inner{
+    flex-direction: row;          /* 🔹 logo à esquerda, hambúrguer à direita */
+    align-items: center;
+    justify-content: space-between;
     gap: 8px;
   }
 
@@ -1074,11 +1150,47 @@ button:hover{
   }
 }
 
-/* diminuir o espaço acima e abaixo da seção dos cards */
-.section.cards-section {
-  padding-top: 4px;
-  padding-bottom: 4px;
+/* Espaço mais curto entre texto e cards */
+.cards-section {
+  padding-top: 0 !important;       /* gruda mais no texto acima */
+  padding-bottom: 20px !important; /* menos espaço embaixo */
 }
+
+/* Container dessa seção com menos “respiro” vertical */
+.cards-section .container {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Cards mais perto do texto "Planos mensais..." */
+.cards-section .grid {
+  margin-top: 12px;   /* era 24px, agora bem menor */
+}
+
+/* Professores mais perto dos cards */
+.professores-section {
+  padding-top: 32px;  /* era 60px, reduz bastante a distância */
+}
+
+/* MOBILE — ajusta ordem da seção Professores */
+@media (max-width: 860px){
+
+  .professores-grid{
+    grid-template-columns: 1fr;
+  }
+
+  /* ordem do conteúdo */
+  .professores-texto{
+    order: 1; /* vem primeiro */
+    text-align: center;
+  }
+
+  .professores-foto{
+    order: 2; /* vem depois */
+    margin: 0 auto;
+  }
+}
+
 
 
 

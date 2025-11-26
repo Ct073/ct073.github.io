@@ -135,12 +135,14 @@ img{
     display: flex;
   }
 
-  /* Mostra o botão hambúrguer */
+  /* Botão hambúrguer */
   .menu-toggle {
     display: flex;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
+    order: 2;          /* hambúrguer à direita */
+    margin-left: auto; /* empurra pra ponta direita */
   }
 
   .menu-toggle span {
@@ -151,7 +153,7 @@ img{
     transition: 0.3s;
   }
 
-  /* Quando o menu estiver aberto → anima o hambúrguer */
+  /* Anima o hambúrguer em X quando abrir */
   .nav-toggle:checked + .menu-toggle span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
@@ -162,7 +164,21 @@ img{
     transform: translateY(-8px) rotate(-45deg);
   }
 
-  /* Header fica mais compacto */
+  /* Logo menor e posição à esquerda */
+  .logo-wrapper {
+    order: 1;
+  }
+
+  .logo-img {
+    height: 50px;
+  }
+
+  /* Esconde a logo quando o menu estiver aberto */
+  .nav-toggle:checked ~ .logo-wrapper {
+    display: none;
+  }
+
+  /* Header mais compacto */
   .site-header .container {
     padding: 12px 16px;
   }
@@ -172,11 +188,6 @@ img{
     align-items: center;
     justify-content: space-between;
   }
-
-  /* Logo menor */
-  .logo-img {
-    height: 50px;
-  }
 }
 
 /* ================================
@@ -185,7 +196,7 @@ img{
 .hero-banner {
   position: relative;
   min-height: 320px; /* 🔹 Altura reduzida */
-  background-image: url("../img/hero-ct.jpg"); /* Sua imagem nova */
+  background-image: url("../img/BANNER-DESKTOP.jpg"); /* Sua imagem nova */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -195,6 +206,23 @@ img{
 @media (max-width: 768px) {
   .hero-banner {
     min-height: 220px;
+  }
+}
+
+/* ============================
+   HERO — Imagem diferenciada no mobile
+============================ */
+@media (max-width: 768px) {
+  .hero-banner {
+    background-image: url("../img/banner-mobile.jpg"); /* imagem exclusiva para mobile */
+    background-position: center top; /* ajusta melhor para celulares */
+    height: 380px; /* pode ajustar para o tamanho desejado */
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 60px; /* ajuste para sumir o espaço branco */
   }
 }
 
@@ -1011,6 +1039,7 @@ button:hover{
 .card-body h4 a:hover {
   color: var(--brand-dark);
 }
+
 /* ================================
    SEÇÃO PROFESSORES (AJUSTADA)
 ================================ */
@@ -1023,7 +1052,7 @@ button:hover{
 
 .professores-foto{
   width: 100%;
-  max-width: 380px;    /* 🔥 um pouco menor para harmonizar com os cards */
+  max-width: 380px;
   border-radius: 16px;
   overflow: hidden;
   justify-self: start;
@@ -1037,9 +1066,9 @@ button:hover{
 }
 
 .professores-texto{
-  font-size: 16px;     /* igual ao restante */
+  font-size: 16px;
   line-height: 1.6;
-  color: var(--fg);    /* mantém o padrão do texto do site */
+  color: var(--fg);
 }
 
 .professores-texto b{
@@ -1051,12 +1080,14 @@ button:hover{
   .professores-grid{
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 24px;
   }
 
   .professores-foto{
     margin: 0 auto;
   }
 }
+
 /* ================================
    PRODUTOS (UNIFORMES)
 ================================ */
@@ -1172,24 +1203,7 @@ button:hover{
   padding-top: 32px;  /* era 60px, reduz bastante a distância */
 }
 
-/* MOBILE — ajusta ordem da seção Professores */
-@media (max-width: 860px){
 
-  .professores-grid{
-    grid-template-columns: 1fr;
-  }
-
-  /* ordem do conteúdo */
-  .professores-texto{
-    order: 1; /* vem primeiro */
-    text-align: center;
-  }
-
-  .professores-foto{
-    order: 2; /* vem depois */
-    margin: 0 auto;
-  }
-}
 
 
 

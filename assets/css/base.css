@@ -214,9 +214,10 @@ img{
 ============================ */
 @media (max-width: 768px) {
   .hero-banner {
-    background-image: url("../img/banner-mobile.jpg"); /* imagem exclusiva para mobile */
-    background-position: center top; /* ajusta melhor para celulares */
-    height: 380px; /* pode ajustar para o tamanho desejado */
+    background-image: url("../img/banner-mobile.jpg");
+    background-position: center;   /* centraliza melhor o recorte */
+    background-size: cover;        /* garante que preencha a largura */
+    height: 220px;                 /* começa testando entre 200–260px */
   }
 }
 

@@ -820,6 +820,14 @@ img{
   display: block;
 }
 
+/* 🎥 VÍDEOS DO YOUTUBE – mesmo estilo 9:16 */
+.media-item iframe{
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  display: block;
+  border: 0;
+}
+
 /* 🖼️ FOTOS – retangulares como antes */
 .media-item img{
   width: 100%;
@@ -1108,6 +1116,16 @@ button:hover{
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   display: block;
+}
+
+/* vídeo do YouTube na página de produtos */
+.product-media iframe{
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: block;
+  border: 0;
 }
 
 /* textos à direita */

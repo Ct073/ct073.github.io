@@ -1102,7 +1102,17 @@ button:hover{
 }
 
 /* vídeo em formato tipo Reels 9:16 (local ou YouTube) */
-.product-media video,
+/* vídeo local (MP4) */
+.product-media video{
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: block;
+}
+
+/* vídeo YouTube */
 .product-media iframe{
   width: 100%;
   aspect-ratio: 9 / 16;

@@ -1096,28 +1096,23 @@ button:hover{
 
 .product-layout{
   display: grid;
-  grid-template-columns: minmax(240px, 360px) minmax(0, 1fr);
+  grid-template-columns: 340px minmax(0, 1fr); /* coluna do vídeo com largura fixa “bonita” */
   gap: 40px;
   align-items: flex-start;
 }
 
-/* vídeo em formato tipo Reels 9:16 (local ou YouTube) */
-/* vídeo local (MP4) */
-.product-media video{
-  width: 100%;
-  aspect-ratio: 9 / 16;
-  object-fit: cover;
+/* “cartão” que envolve o vídeo */
+.product-media{
+  max-width: 340px;
   border-radius: 16px;
+  overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  display: block;
 }
 
-/* vídeo YouTube */
+/* vídeo YouTube em formato 9x16 */
 .product-media iframe{
   width: 100%;
   aspect-ratio: 9 / 16;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   display: block;
   border: 0;
 }
@@ -1177,6 +1172,7 @@ button:hover{
     text-align: center;
   }
 }
+
 
 /* Botões da hero no mobile - Empilhados e centralizados */
 @media (max-width: 768px) {

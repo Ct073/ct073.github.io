@@ -812,18 +812,11 @@ img{
   box-shadow: 0 4px 14px rgba(0,0,0,0.12);
 }
 
-/* 🎥 VÍDEOS – formato reels 9:16 */
-.media-item video{
-  width: 100%;
-  aspect-ratio: 9 / 16;   /* deixa o card vertical, estilo story/reels */
-  object-fit: cover;
-  display: block;
-}
-
-/* 🎥 VÍDEOS DO YOUTUBE – mesmo estilo 9:16 */
+/* 🎥 VÍDEOS – formato reels 9:16 (video local ou YouTube) */
+.media-item video,
 .media-item iframe{
   width: 100%;
-  aspect-ratio: 9 / 16;
+  aspect-ratio: 9 / 16;   /* deixa o card vertical, estilo story/reels */
   display: block;
   border: 0;
 }
@@ -1108,17 +1101,8 @@ button:hover{
   align-items: flex-start;
 }
 
-/* vídeo em formato tipo Reels 9:16 */
-.product-media video{
-  width: 100%;
-  aspect-ratio: 9 / 16;
-  object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  display: block;
-}
-
-/* vídeo do YouTube na página de produtos */
+/* vídeo em formato tipo Reels 9:16 (local ou YouTube) */
+.product-media video,
 .product-media iframe{
   width: 100%;
   aspect-ratio: 9 / 16;
